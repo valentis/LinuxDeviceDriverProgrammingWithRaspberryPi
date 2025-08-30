@@ -35,3 +35,8 @@
 - $ sudo cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
 - $ sudo cp arch/arm64/boot/dts/overlays/README /boot/firmware/overlays/
 
+설치가 다 끝나면 리부팅하고 리부팅 후 커널 버전을 확인합니다.
+- $ sudo reboot
+- $ uname -a
+  Linux raspberrypi 6.12.44-v8-16k+ #2 SMP PREEMPT Sat Aug 30 14:21:47 KST 2025 aarch64 GNU/Linux
+
