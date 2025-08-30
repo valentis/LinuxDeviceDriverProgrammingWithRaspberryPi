@@ -12,17 +12,22 @@
 
 설치는 아래와 같이 진행하면 됩니다. 먼저 필요한 패키지를 설치합니다.
 - $ sudo apt install bc bison flex libssl-dev make git
+
 그리고 리눅스 커널의 소스 코드를 다운로드 힙니다.
 - $ git clone --depth=1 https://github.com/raspberrypi/linux
+  
 그리고 소스 코드를 위한 Makefile을 생성 합니다.
 라즈베리 파이 5는 BCM2712를 사용하므로 kernel_2712 옵션을 사용합니다.
 - $ cd linux-
 - $ KERNEL=kernel_2712
+
 소스 코드를 빌드합니다.
 - $ make bcm2712_defconfig
 - $ make -j6 Image.gz modules dtbs
+
 모듈을 설치합니다.
 - $ sudo make -j6 modules_install
+
 시스템에 리눅스 커널을 설치합니다.
 - $ sudo cp /boot/firmware/$KERNEL.img /boot/firmware/$KERNEL-backup.img
 - $ sudo cp arch/arm64/boot/Image.gz /boot/firmware/$KERNEL.img
